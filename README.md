@@ -71,6 +71,7 @@ Basically just trying to compile all the ideas and adding some of my own:
   - Dark map
   - Only revealed with headlight from snowplow
     -mask atop map?
+    -Has collider points or some other thing that keeps track of where snowplow is and what to reveal
     -Unity discussion about this: https://discussions.unity.com/t/gradual-appearance-of-objects/671294 
       they are talking about 3D game but it might still be relevant to us
   - Has permissible paths
