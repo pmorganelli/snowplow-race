@@ -19,3 +19,34 @@ Things that might be done:
   - Unity object to represent snowplow
 
   - Snowplow controller that supports WASD (forward, backward, turn) controls
+
+
+
+
+
+
+# Peter's Working Ideas
+
+For G.O.'s and Components I think we would need:
+
+*Snowplow*
+  -This will be the main GameObject for a snowplow, something that can be easily duplicated if 
+        that is an avenue we wish to pursue
+  -Will have a Headlight/Light object at a minimum
+  -This will likely be the 2D version of some kind of Game Controller object we tried to use 
+        previously. Now that I think of it, Game Controller was used for 3D, so we can 
+        probably find some packages that allow us to control the Snowplow with WASD/arrows
+  -Will have some basic art and different side views
+  
+*Map*
+  -Starts as as a completely dark map, the Headlight from the Snowplow will reveal squares 
+  along the way
+
+*Snow*
+  -The objects that will disappear onCollision with a Snowplow on the Map
+  -In the future, will increase sscore
+
+Agreed ideas with all above from Norman!
+
+
+
