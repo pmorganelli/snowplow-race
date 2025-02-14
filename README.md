@@ -21,10 +21,6 @@ Things that might be done:
   - Snowplow controller that supports WASD (forward, backward, turn) controls
 
 
-
-
-
-
 # Peter's Working Ideas
 
 For G.O.'s and Components I think we would need:
@@ -48,5 +44,46 @@ For G.O.'s and Components I think we would need:
 
 Agreed ideas with all above from Norman!
 
+# Kaelen's Working Ideas
+Basically just trying to compile all the ideas and adding some of my own:
 
+*Snowplow Game Object*
+  - Controlled with Game Controller Object
+  - Collider(s)
+    -When collides with snow
+    -When collides with certain points on the map? 
+      -maybe this is how we can do the gradual reveal of the map? 
+    -When collides with edges of paths on map
+  - Light?
+    -this may or may not be a part of the snowplow object, it might be part of the map object instead (gradually revealing map through mask) and just appear as though it is part of the snowplow object
+*Game Controller Object*
+  - WASD to control Snowplow
 
+*Snow Game Object*
+  -Collider
+    -dissapears on collision with snowplow
+  -Need to figure out how we are counting "snow cleared"
+    maybe it is every block cleared?
+  -Needs to "spawn" before it is visible to player so it appears as though the snow "exists" there
+    -spawn off screen or out of spotlight
+
+*Map*
+  - Dark map
+  - Only revealed with headlight from snowplow
+    -mask atop map?
+    -Unity discussion about this: https://discussions.unity.com/t/gradual-appearance-of-objects/671294 
+      they are talking about 3D game but it might still be relevant to us
+  - Has permissible paths
+    -some sort of collider? or some other type of constraint on where our snowplow and snow can be on the map
+
+~UI/UX/Gameplay~
+*Scoreboard*
+  -Time left and/or how many streets still need to be cleared
+  -Snow cleared
+    increases with each "snow" cleared
+*Play/Pause/Home*
+  -Standard game UI components
+*Game Over/Game Start*
+  - When is game over?
+    -when user chooses to quit, when __ streets are successfully cleared, when time runs out, when level is cleared
+  -Can the user win/lose or is it just an infinite game? 
