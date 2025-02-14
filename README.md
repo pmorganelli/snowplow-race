@@ -76,6 +76,7 @@ Basically just trying to compile all the ideas and adding some of my own:
       they are talking about 3D game but it might still be relevant to us
   - Has permissible paths
     -some sort of collider? or some other type of constraint on where our snowplow and snow can be on the map
+  - Advice from ChatGPT on the map: https://chatgpt.com/share/67afcd0a-03fc-800c-9db1-566001833b7b
 
 ~UI/UX/Gameplay~
 *Scoreboard*
@@ -88,3 +89,6 @@ Basically just trying to compile all the ideas and adding some of my own:
   - When is game over?
     -when user chooses to quit, when __ streets are successfully cleared, when time runs out, when level is cleared
   -Can the user win/lose or is it just an infinite game? 
+  
+  
+
