@@ -59,7 +59,7 @@ Basically just trying to compile all the ideas and adding some of my own:
   - Light?
     -this may or may not be a part of the snowplow object, it might be part of the map object instead (gradually revealing map through mask) and just appear as though it is part of the snowplow object
 *Game Controller Object*
-  - WASD to control Snowplow
+  - WASD to control Snowplow [**Update:** See `PlayerMovement` script]
 
 *Snow Game Object*
   -Collider
