@@ -33,7 +33,7 @@ For G.O.'s and Components I think we would need:
   -Will have a Headlight/Light object at a minimum
   -This will likely be the 2D version of some kind of Game Controller object we tried to use 
         previously. Now that I think of it, Game Controller was used for 3D, so we can 
-        probably find some packages that allow us to control the Snowplow with WASD/arrows
+        probably find some packages that allow us to control the Snowplow with WASD/arrows.  **Update:** I've added a script `PlayerMovement` ---NR
   -Will have some basic art and different side views
   
 *Map*
