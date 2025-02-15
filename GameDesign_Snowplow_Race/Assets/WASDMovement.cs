@@ -1,22 +1,27 @@
-// Initial source: ChatGPT
+// Initial Source: chatgpt
 
 using UnityEngine;
 
 public class WASDMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;  // Speed of forward/backward movement
-    public float rotationSpeed = 180f; // Speed of rotation in degrees per second
+    public KeyCode forwardKey = KeyCode.W;
+    public KeyCode backwardKey = KeyCode.S;
+    public KeyCode rotateLeftKey = KeyCode.A;
+    public KeyCode rotateRightKey = KeyCode.D;
+
+    public float moveSpeed = 5f;  // Forward/backward speed
+    public float rotationSpeed = 180f; // Rotation speed in degrees per second
 
     void Update()
     {
-        // Get input values (return zero on no keypress)
-        float moveInput = Input.GetAxisRaw("Vertical");  // W/S → Forward/Backward
-        float rotateInput = Input.GetAxisRaw("Horizontal"); // A/D → Rotate Left/Right
+        // Get movement input
+        float moveInput = (Input.GetKey(forwardKey) ? 1 : 0) + (Input.GetKey(backwardKey) ? -1 : 0);
+        float rotateInput = (Input.GetKey(rotateLeftKey) ? -1 : 0) + (Input.GetKey(rotateRightKey) ? 1 : 0);
 
-        // Rotate the player around the Z-axis (2D rotation)
+        // Rotate the player
         transform.Rotate(0, 0, -rotateInput * rotationSpeed * Time.deltaTime);
 
-        // Move the player in its forward direction
+        // Move the player forward/backward
         transform.position += transform.up * moveInput * moveSpeed * Time.deltaTime;
     }
 }
