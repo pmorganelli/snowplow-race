@@ -1,5 +1,7 @@
 # Random bits and pieces
 
+(See also _[Thoughts about Unity's programming model](UNITY.md)_.)
+
 Things that might be done:
 
   - Unity object that gradually clears an opaque screen to reveal a map: `ScreenClearer`, with these public variables:
