@@ -1,5 +1,14 @@
 // source: chatgpt
 
+
+// How to use:
+//
+// * Attach PlayerMovement to a player GameObject.
+//
+// * In the Inspector, enter a four-letter key mapping (e.g., "WASD"
+//   for Player 1, "IJKL" for Player 2).
+
+
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
