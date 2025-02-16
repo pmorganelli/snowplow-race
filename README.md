@@ -52,13 +52,15 @@ Basically just trying to compile all the ideas and adding some of my own:
 *Snowplow Game Object*
   - Controlled with Game Controller Object
   - Collider(s)
-    -When collides with snow
-    -When collides with certain points on the map? 
-      -maybe this is how we can do the gradual reveal of the map? 
-    -When collides with edges of paths on map
+      * When collides with snow
+      * When collides with certain points on the map? 
+      * maybe this is how we can do the gradual reveal of the map? 
+      * When collides with edges of paths on map
   - Light?
-    -this may or may not be a part of the snowplow object, it might be part of the map object instead (gradually revealing map through mask) and just appear as though it is part of the snowplow object
+     * this may or may not be a part of the snowplow object, it might be part of the map object instead (gradually revealing map through mask) and just appear as though it is part of the snowplow object
+
 *Game Controller Object*
+
   - WASD to control Snowplow [**Update:** See `PlayerMovement` script]
 
 *Snow Game Object*
