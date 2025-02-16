@@ -62,12 +62,13 @@ Basically just trying to compile all the ideas and adding some of my own:
   - WASD to control Snowplow [**Update:** See `PlayerMovement` script]
 
 *Snow Game Object*
-  -Collider
-    -dissapears on collision with snowplow
-  -Need to figure out how we are counting "snow cleared"
-    maybe it is every block cleared?
-  -Needs to "spawn" before it is visible to player so it appears as though the snow "exists" there
-    -spawn off screen or out of spotlight
+
+  - Collider
+      * dissapears on collision with snowplow
+  - Need to figure out how we are counting "snow cleared"
+      * maybe it is every block cleared?
+  - Needs to "spawn" before it is visible to player so it appears as though the snow "exists" there
+      * spawn off screen or out of spotlight
 
 *Map*
   - Dark map
