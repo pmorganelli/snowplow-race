@@ -93,7 +93,18 @@ Basically just trying to compile all the ideas and adding some of my own:
 *Game Over/Game Start*
   - When is game over?
     -when user chooses to quit, when __ streets are successfully cleared, when time runs out, when level is cleared
-  -Can the user win/lose or is it just an infinite game? 
-  
-  
+  -Can the user win/lose or is it just an infinite game?
+
+# Possible Game Mechanics
+- Katamari-like snowball building
+- Salt and snowplow, one must complete before the other
+- Night creatures chase you at night
+- Sliding on ice
+- Clear the map as quickly as possible/before the sun rises
+- Obstacles in path
+- Try not hit other cars, pedestrians, cyclists
+- running out of health/freeze meter/Vehicle can take damage and not clear snow as well
+- There might be a vehicle part collectibles throughout the map so if you collected say 3 you can auto repair yourself if you are damaged.
+- Chill snowplow game where you explore the town and discover a mystery
+
 
