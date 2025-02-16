@@ -2,31 +2,35 @@
 
 using UnityEngine;
 
-public class ScreenClearer : MonoBehaviour
+public class fogClearer : MonoBehaviour
 {
-    public GameObject screen; // The opaque screen being cleared,
+    public GameObject fog; // The opaque fog being cleared,
                               // likely created by GameObject::2D Object::Sprite
 
     public GameObject maskParent; // The GameObject holding the bitmap mask
 
-    private Texture2D screenTexture;
+    public Texture2D fogTexture;
     private Texture2D maskTexture;
-    private SpriteRenderer screenRenderer;
+    private SpriteRenderer fogRenderer;
     
     void Start()
     {
-        // Get screen's sprite and texture
-        screenRenderer = screen.GetComponent<SpriteRenderer>();
-        if (screenRenderer == null || !(screenRenderer.sprite.texture is Texture2D))
+        // Get fog's sprite and texture
+        fogRenderer = fog.GetComponent<SpriteRenderer>();
+        if (fogRenderer == null || !(fogRenderer.sprite.texture is Texture2D))
         {
-            Debug.LogError("Screen must have a SpriteRenderer with a Texture2D.");
+            if(fogRenderer == null)
+            {
+                Debug.LogError("fogRenderer is null.");
+            }
+            Debug.LogError("fog must have a SpriteRenderer with a Texture2D.");
             return;
         }
 
-        // Clone screen texture so we don't modify the original asset
-        screenTexture = Instantiate(screenRenderer.sprite.texture);
-        screenTexture.Apply();
-        screenRenderer.sprite = Sprite.Create(screenTexture, screenRenderer.sprite.rect, new Vector2(0.5f, 0.5f));
+        // Clone fog texture so we don't modify the original asset
+        fogTexture = Instantiate(fogRenderer.sprite.texture);
+        fogTexture.Apply();
+        fogRenderer.sprite = Sprite.Create(fogTexture, fogRenderer.sprite.rect, new Vector2(0.5f, 0.5f));
 
         // Get the bitmap mask texture from maskParent's child
         maskTexture = maskParent.GetComponentInChildren<SpriteRenderer>()?.sprite?.texture;
@@ -39,21 +43,21 @@ public class ScreenClearer : MonoBehaviour
 
     void Update()
     {
-        if (screenTexture == null || maskTexture == null) return;
+        if (fogTexture == null || maskTexture == null) return;
 
-        // Convert world position to screen texture space
-        Vector2 screenPos = WorldToTexturePosition(transform.position, screenRenderer);
+        // Convert world position to fog texture space
+        Vector2 fogPos = WorldToTexturePosition(transform.position, fogRenderer);
         
         // Apply the mask to clear alpha
-        ApplyMask(screenPos);
+        ApplyMask(fogPos);
     }
 
     void ApplyMask(Vector2 position)
     {
         int maskWidth = maskTexture.width;
         int maskHeight = maskTexture.height;
-        int screenWidth = screenTexture.width;
-        int screenHeight = screenTexture.height;
+        int fogWidth = fogTexture.width;
+        int fogHeight = fogTexture.height;
 
         // Convert position to integer pixel coordinates
         int startX = (int)(position.x - maskWidth / 2);
@@ -63,26 +67,26 @@ public class ScreenClearer : MonoBehaviour
         {
             for (int y = 0; y < maskHeight; y++)
             {
-                int screenX = startX + x;
-                int screenY = startY + y;
+                int fogX = startX + x;
+                int fogY = startY + y;
 
-                // Ensure within screen bounds
-                if (screenX < 0 || screenX >= screenWidth || screenY < 0 || screenY >= screenHeight)
+                // Ensure within fog bounds
+                if (fogX < 0 || fogX >= fogWidth || fogY < 0 || fogY >= fogHeight)
                     continue;
 
                 // Check if the mask pixel is set
                 if (maskTexture.GetPixel(x, y).a > 0.5f)
                 {
-                    // Make the corresponding screen pixel transparent
-                    Color pixel = screenTexture.GetPixel(screenX, screenY);
+                    // Make the corresponding fog pixel transparent
+                    Color pixel = fogTexture.GetPixel(fogX, fogY);
                     pixel.a = 0;
-                    screenTexture.SetPixel(screenX, screenY, pixel);
+                    fogTexture.SetPixel(fogX, fogY, pixel);
                 }
             }
         }
 
         // Apply the texture modifications
-        screenTexture.Apply();
+        fogTexture.Apply();
     }
 
     Vector2 WorldToTexturePosition(Vector3 worldPosition, SpriteRenderer renderer)
