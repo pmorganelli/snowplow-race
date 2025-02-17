@@ -14,7 +14,7 @@
 
  1. Second player with different key controls
 
- 1. Two snowplows to be made into prefabs (Norman, ???)
+ 1. ~~Two snowplows to be made into prefabs (Norman)~~
 
  1. Scoreboard: who has more snow
 
