@@ -83,6 +83,8 @@ public class AdvancedHeadlightRevealFog : MonoBehaviour
         Texture2D headlightTex = headlightSprite.texture;
         if (headlightTex == null) return;
 
+Debug.Log("Fog bounds: " + fogBounds + ", Headlight pos: " + transform.position);
+
         // We'll need the sprite's 'rect' and 'pivot' for correct pixel offsets
         Rect hlRect = headlightSprite.rect;     // The sub-rectangle in the texture atlas
         Vector2 hlPivot = headlightSprite.pivot; // The pivot in *pixel* coordinates
