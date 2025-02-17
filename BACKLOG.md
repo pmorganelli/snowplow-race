@@ -20,6 +20,16 @@
 
  8. Detect game over
 
+ 9. Make the snowplow more fun to drive:
+
+    - When player has plow pointed almost straight along road, make automatic adjustments in orientation to keep it moving along the road (don't allow plow to drift slowly to edge)
+    - Raise plow for more speed; lower plow to pick up snow
+    - Let W/S increase speed gradually to top speed, slow down gradually when released
+    - Add audio cues:
+        * When straight on road
+        * For current speed
+
+
  9. Correct geometry of the art
 
 10. Fancy new features
