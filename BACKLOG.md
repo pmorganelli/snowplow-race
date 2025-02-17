@@ -1,6 +1,6 @@
 # Backlog
 
- 1. Snowplow that can be steered (DONE)
+ 1. ~~Snowplow that can be steered (Norman, Peter)~~
 
  1. Headlights to uncover map (Peter, Norman)
 
@@ -13,6 +13,8 @@
 
 
  1. Second player with different key controls
+
+ 1. Two snowplows to be made into prefabs (Norman, ???)
 
  1. Scoreboard: who has more snow
 
