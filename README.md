@@ -1,3 +1,31 @@
+# Game Narrative
+
+Two players are using snowplows to clear the streets of Pleasantville.
+Whoever clears the most snow wins.
+
+ 1. The world consists of a map on which there are roads.  Some roads have snow on them.
+ 
+ 2. Snowplows can travel on roads.  (One day snowplows may be able to travel off road, but there would be consequences.)
+ 
+ 3. In the beginning, the town is shrouded in darkness.  The only portion of the map that can be seen is what is illuminated by the headlights of the snowplows.  Headlights shine out ahead of the plow in the direction of travel.
+
+ 4. If a part of the map is ever illuminated by headlights, that part of the map stays illuminated forever.
+ 
+ 5. Snowplows move using WASD or IJKL keys.  Snow is cleared by moving a plow over it.
+ 
+## The lens of player choice
+
+  - Initially the player's only choices are where to go: *what route to take* to clear as much snow as possible before the opponent gets there.
+  
+  - Some other interesting choices might be possible, for example:
+
+      * Turn on high beams to illuminate more space ahead, at the cost of moving more slowly.
+      
+      * Raise the plow in order to move faster, at the cost of not being able to pick up any snow (useful on streets that have already cleared).
+      
+  - There could be temporary or unexpected hazards, like stranded motorists or lost kittens.
+
+
 # Random bits and pieces
 
 (See also _[Thoughts about Unity's programming model](UNITY.md)_.)
