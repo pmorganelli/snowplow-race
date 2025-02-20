@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &173661947
+--- !u!1001 &95711948
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1332941114985664145, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_Name
-      value: Button_Quit
+      value: Button_End
       objectReference: {fileID: 0}
     - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_text
@@ -205,11 +205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 286
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -169
+      value: -49
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -223,12 +223,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7092880365467139805, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
-      propertyPath: m_Name
-      value: Quit_text
-      objectReference: {fileID: 0}
     - target: {fileID: 8108266383406020367, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
-      propertyPath: m_AnchoredPosition.y
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -236,10 +232,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
---- !u!224 &173661948 stripped
+--- !u!224 &95711949 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
-  m_PrefabInstance: {fileID: 173661947}
+  m_PrefabInstance: {fileID: 95711948}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &245036908
 GameObject:
@@ -271,9 +267,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 636511635112390786}
   - {fileID: 533328234}
-  - {fileID: 173661948}
+  - {fileID: 1932397355}
+  - {fileID: 95711949}
   m_Father: {fileID: 318543376}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -295,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7473329, g: 0.6462264, b: 1, a: 1}
+  m_Color: {r: 0.48406905, g: 0.83130074, b: 0.9245283, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -573,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SnowPlow Race
+  m_text: Game Over!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -718,7 +714,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &636511635112390785
+--- !u!1001 &1932397354
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -729,6 +725,10 @@ PrefabInstance:
     - target: {fileID: 1332941114985664145, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_Name
       value: Button_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_text
+      value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_Pivot.x
@@ -796,11 +796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -293
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -99
+      value: -49
       objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -814,15 +814,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8108266383406020367, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
---- !u!224 &636511635112390786 stripped
+--- !u!224 &1932397355 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
-  m_PrefabInstance: {fileID: 636511635112390785}
+  m_PrefabInstance: {fileID: 1932397354}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &959184111308226236
 PrefabInstance:
