@@ -69,4 +69,12 @@ public class RBSteering : MonoBehaviour
         // Update the Rigidbody2D position for proper physics/collision
         rb.MovePosition(newPosition);
     }
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log($"Collision with {collision.gameObject.name}");
+    }
+
+
 }
