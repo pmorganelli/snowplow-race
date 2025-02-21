@@ -2,7 +2,7 @@
 
 ## Tutorial popups
 
-The tutorial popups rely on two scripts:
+The tutorial popups are demonstrated in the scene `NRPopupDemo`. They rely on two scripts:
 
   - `Postable` adds a component to an object that can be made to appear and disappear at runtime.  To make it appear, send it a `Post()` message (via method).  To make it disappear, sent `Unpost()`.
 
