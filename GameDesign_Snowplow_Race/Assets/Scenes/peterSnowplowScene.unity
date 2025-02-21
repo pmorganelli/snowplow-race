@@ -228,6 +228,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1956171652983304272, guid: 4ece317c50bea4fbaa57b9e294e90623, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956171652983304272, guid: 4ece317c50bea4fbaa57b9e294e90623, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956171652983304272, guid: 4ece317c50bea4fbaa57b9e294e90623, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -270,6 +278,14 @@ PrefabInstance:
     - target: {fileID: 2878443552243780146, guid: 4ece317c50bea4fbaa57b9e294e90623, type: 3}
       propertyPath: m_Name
       value: Snowplow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381980809712846254, guid: 4ece317c50bea4fbaa57b9e294e90623, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963182241962510934, guid: 4ece317c50bea4fbaa57b9e294e90623, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
