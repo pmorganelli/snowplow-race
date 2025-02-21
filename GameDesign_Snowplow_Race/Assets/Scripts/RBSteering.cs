@@ -25,9 +25,6 @@ public class RBSteering : MonoBehaviour
         // Get the Rigidbody2D on this object
         rb = GetComponent<Rigidbody2D>();
         
-        // Typically set a kinematic body if you're moving via MovePosition/MoveRotation
-        rb.isKinematic = true;
-
         // Validate the keyMapping string
         if (keyMapping.Length != 4)
         {
