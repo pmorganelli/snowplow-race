@@ -1,3 +1,32 @@
+# How the game objects work
+
+## Tutorial popups
+
+The tutorial popups rely on two scripts:
+
+  - `Postable` adds a component to an object that can be made to appear and disappear at runtime.  To make it appear, send it a `Post()` message (via method).  To make it disappear, sent `Unpost()`.
+
+  - `ColliderPopup` has a postable object, to which it sends `Post` when the collider is entered and `Unpost` when the collider is exited.
+  
+They use these prefabs:
+
+  - `Popup` is a UI element that has a background and some text.  It is based on the score object from the Week 1 tutorial.
+
+  - `TutorialPopup` is a collider that will make an associated popup visible when the collider is entered.
+
+
+To create a tutorial popup:
+
+  - Drag the `TutorialPopup` collider into the scene.  Adjust the collider size, position, and angle to where you want it to appear.  The popup will post when there is a vehicle inside the collider.  Rename the object to give a hint as to what it is supposed to pop up.
+  
+  - Drag a `Popup` prefab into the UI Canvas, making it a child of the canvas.  Adjust its position to where you want it to pop up on the screen.  Rename the object to give a hint as to what text it pops up.
+  
+  - If the popup is supposed to be visible at startup, check the box in its `Postable` component.
+
+  - Now go to the `Text` child of the `Popup` object and set the text.
+
+
+
 # Game Narrative
 
 Two players are using snowplows to clear the streets of Pleasantville.
