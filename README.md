@@ -26,6 +26,51 @@ To create a tutorial popup:
   - Now go to the `Text` child of the `Popup` object and set the text.
 
 
+# Scene sketches
+
+This is an attempt to list all the pieces that would need to go into a Level 1 scene that supports our play narrative.
+
+  - Canvas (object that holds everything in "on screen" as opposed to "in the world")
+    
+      * TutorialPopups (container for the popups)
+
+          - Popup W (has a `Postable` component, visible on startup)
+          - ... other popups, not visible on startup ...
+          
+      * Score
+
+  - GameHandler (unclear what goes here)
+
+  - Tutorial Colliders
+
+      * Trigger W (has `ColliderPopup`) component, slot filled with Popup W
+      * ... triggers for other popups ...
+      
+  - Map (has collider component, maybe polygon colliders?)
+
+      * Background art?
+      * Possible scrim or other means of highlighting road position
+      * Snow (container for each snow pile)
+          - Snow pile 1 (has collider, when player hits, get score and animation)
+          - ... more snow piles ...
+
+  - Snowplow (has rigid body, circle collider components)
+
+      * Headlights
+      * Plow art
+      * Some means of carrying illumination
+      
+  - Darkness (superposed over the map)
+  
+Order in layer might look like this:
+
+  - Order 0: map background art
+  - Order 10: road highlights
+  - Order 20: snow
+  - Order 30: plow headlights
+  - Order 31: plow art
+  
+
 
 # Game Narrative
 
