@@ -1,3 +1,15 @@
+# Todo list, Monday February 24
+
+1. Integrate VK Map with NR steering and physics with tutorial popups
+
+2. Add snow to the integrated map.  Two choices
+
+     - Collider to detect player, update score, and vanish
+     - Figure out how to integrate the tilemap-based snow removal
+
+3. Take that integration, add scoring and we are done?
+
+
 # How the game objects work
 
 ## Tutorial popups
