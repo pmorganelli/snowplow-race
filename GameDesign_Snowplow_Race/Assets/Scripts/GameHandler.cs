@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement; //change #1: added namespace
 public class GameHandler : MonoBehaviour
 {
     public GameObject scoreText;
-    private int playerScore = 0;
+    public static int playerScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +31,10 @@ public class GameHandler : MonoBehaviour
             scoreTextB.text = "FINAL SCORE: " + playerScore;
         }
 
-        if (playerScore >= 10)
+        if (playerScore >= 200)
         {
             //scoreTextB.text = "FINAL SCORE:" + playerScore;
+            playerScore = 0;
             SceneManager.LoadScene("EndScene"); //change #2: switch scene
                                                 //gameOverText.SetActive(true); //change #3: comment gameOverText
         }

@@ -858,7 +858,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'FINAL SCORE: ??'
+  m_Text: 'FINAL SCORE: 200! You beat level 1!'
 --- !u!222 &1679935872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -875,6 +875,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2538427586965518212, guid: 9cfed1bb12a1f411983ea4c38e909b7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808314147034688409, guid: 9cfed1bb12a1f411983ea4c38e909b7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6699449730293873287, guid: 9cfed1bb12a1f411983ea4c38e909b7c, type: 3}
       propertyPath: m_Name
       value: GameHandlerCanvas
