@@ -8,6 +8,7 @@ TagManager:
   - snow
   - dark
   - SnowTilemap
+  - Snowpile
   layers:
   - Default
   - TransparentFX
