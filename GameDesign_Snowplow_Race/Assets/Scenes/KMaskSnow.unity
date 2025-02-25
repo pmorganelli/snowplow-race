@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 692356677}
   - component: {fileID: 692356676}
   - component: {fileID: 692356675}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MaskCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692356674}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
@@ -305,7 +305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &997191156
 GameObject:
@@ -445,6 +445,11 @@ CapsuleCollider2D:
   m_Offset: {x: -1.1847295, y: -0.53812397}
   m_Size: {x: 4.7811713, y: 7.223676}
   m_Direction: 0
+--- !u!4 &1146819583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5491722138668686164, guid: 1f4bd444ffa01a19984fe16448db64b0, type: 3}
+  m_PrefabInstance: {fileID: 1782982858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427410112
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +600,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5491722138668686164, guid: 1f4bd444ffa01a19984fe16448db64b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864881658}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1413575408916906875, guid: 1f4bd444ffa01a19984fe16448db64b0, type: 3}
       insertIndex: -1
@@ -615,7 +623,7 @@ GameObject:
   - component: {fileID: 1864881658}
   - component: {fileID: 1864881657}
   - component: {fileID: 1864881659}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SnowMaskObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,16 +670,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 32e20323f45a040218dc770fba16f5e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1864881658
@@ -681,13 +689,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864881656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21068224, y: -0.17421982, z: -0.1483355}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.008944939, y: -0.044222154, z: -0.19805571, w: 0.97915184}
+  m_LocalPosition: {x: -19.917479, y: 14.618942, z: -0.4835938}
+  m_LocalScale: {x: 4.8425984, y: 5, z: 1.0065433}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1146819583}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1864881659
 MonoBehaviour:
