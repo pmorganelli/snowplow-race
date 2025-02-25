@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Road
-  - snow
-  - dark
   - SnowTilemap
   - Snowpile
+  - dark
+  - Road
+  - GameHandler
   layers:
   - Default
   - TransparentFX
@@ -16,18 +16,18 @@ TagManager:
   - 
   - Water
   - UI
-  - darkness
-  - players
-  - 
-  - 
-  - truck
-  - SnowMask
   - 
   - 
   - 
   - 
   - 
-  - background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

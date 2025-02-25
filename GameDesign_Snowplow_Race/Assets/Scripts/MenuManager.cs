@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     public void StartGame()
     {
-        SceneManager.LoadScene("SelinScene");
+        SceneManager.LoadScene("peterPlaytestSnowplow");
     }
 
     // Update is called once per frame

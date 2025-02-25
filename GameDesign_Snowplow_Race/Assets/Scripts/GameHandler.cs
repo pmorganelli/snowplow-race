@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //change #1: added namespace
+
+
 
 public class GameHandler : MonoBehaviour
 {
@@ -23,7 +26,30 @@ public class GameHandler : MonoBehaviour
     void UpdateScore()
     {
         Text scoreTextB = scoreText.GetComponent<Text>();
-        scoreTextB.text = "SCORE:" + playerScore;
-        
+        if(SceneManager.GetActiveScene().name == "EndScene")
+        {
+            scoreTextB.text = "FINAL SCORE: " + playerScore;
+        }
+
+        if (playerScore >= 10)
+        {
+            //scoreTextB.text = "FINAL SCORE:" + playerScore;
+            SceneManager.LoadScene("EndScene"); //change #2: switch scene
+                                                //gameOverText.SetActive(true); //change #3: comment gameOverText
+        }
+        scoreTextB.text = "SCORE: " + playerScore;
+    }
+    void RestartGame()
+    {
+        playerScore = 0;
+        SceneManager.LoadScene("peterPlaytestSnowplow");
+    }
+    void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
