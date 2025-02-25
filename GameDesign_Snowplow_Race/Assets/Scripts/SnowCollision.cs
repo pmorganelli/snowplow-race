@@ -9,7 +9,6 @@ public class SnowCollision : MonoBehaviour
         if(collision.gameObject.CompareTag("Snowpile"))
         {
             Debug.Log("collided!!");
-            Destroy(gameObject);
         }
     }
 }
