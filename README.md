@@ -1,13 +1,8 @@
-# Todo list, Monday February 24
+# State of the prefabs
 
-1. Integrate VK Map with NR steering and physics with tutorial popups
-
-2. Add snow to the integrated map.  Two choices
-
-     - Collider to detect player, update score, and vanish
-     - Figure out how to integrate the tilemap-based snow removal
-
-3. Take that integration, add scoring and we are done?
+We have several snowplow prefabs in various states of debugging.
+The one that is most up to date is the `SimpleOversizedYellowPlow`.
+I just updated it with the changes that are used in Monday's demo.
 
 
 # How the game objects work
