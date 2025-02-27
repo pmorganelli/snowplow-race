@@ -7,6 +7,31 @@ I just updated it with the changes that are used in Monday's demo.
 
 # How the game objects work
 
+## The snowplow
+
+The current (Wed Feb 26 07:45:43 PM EST 2025) working prefab for the snowplow is `SimpleOversizedYellowSnowplow`.  It works as follows:
+
+  - In order to keep the plow on the road, it has a Dynamic Rigidbody2D with "light friction" material.  The collider that does the job is a Circle collider, which is necessary to keep the corners of the plow from getting caught by the side of the road.  This collider also has "light friction" material and it is **not** a trigger collider.
+
+  - The plow has a second, larger Circle collider whose job it is to detect snow.  This collider **is** a trigger collider, and in order for the scripts to work, it must be the **only** trigger collider on the plow.  The radius of this collider _nest to be fine-tuned_:
+
+      * If the radius is too large, the plow will pick up snow that appears to be off to the side of the snowplow, not in its path.
+
+      * If the radius is too small, the plow may leave snow on the
+        side of the road that should be picked up but is not.a
+
+  - The plow has an "RB Steering" component (script) that allows the
+    player to drive the plow. It uses WASD keys that can be changed in
+    the inspector.  This component respects rigid-body physics.
+
+  - The plow has a "Snow Clear Nearby" component (script) that picks
+    up the now.  This script has an "on trigger stay" method that is
+    active whenever the larger (trigger) collider overlaps with a snow
+    tile.  The code on this method searches nearby cells in the snow tilemap (the
+    ones within the bounds of the collider) to find the nearest cell
+    that is active.  If such a cell is found, the method bumps the
+    score by one and destroys the tile.
+
 ## Tutorial popups
 
 The tutorial popups are demonstrated in the scene `NRPopupDemo`. They rely on two scripts:
