@@ -43,10 +43,8 @@ public class SnowClearNearby : MonoBehaviour
             }
         }
 
-        if (pickupCollider != null) {
-            Debug.Log($"Found trigger collider: {pickupCollider.name}");
-        } else {
-            Debug.LogWarning("No trigger collider found on this GameObject!");
+        if (pickupCollider == null) {
+            Debug.LogError("No trigger collider found on this GameObject!");
         }
     }
 
@@ -71,8 +69,8 @@ public class SnowClearNearby : MonoBehaviour
         Vector3Int minCellPos = snowTilemap.WorldToCell(minWorldPos);
         Vector3Int maxCellPos = snowTilemap.WorldToCell(maxWorldPos);
 
-        Debug.Log("min trigger position is " + minCellPos);
-        Debug.Log("max trigger position is " + maxCellPos);
+        //Debug.Log("min trigger position is " + minCellPos);
+        //Debug.Log("max trigger position is " + maxCellPos);
 
         TileBase closestTile = null;
         float closestDistanceSqr = float.MaxValue;
@@ -86,7 +84,7 @@ public class SnowClearNearby : MonoBehaviour
                 Vector3Int cellPos = new Vector3Int(x, y, 0);
 
                 TileBase tile = snowTilemap.GetTile(cellPos);
-                Debug.Log("got a snow tile at " + cellPos);
+                //Debug.Log("got a snow tile at " + cellPos);
                 if (tile != null)
                 {
                     // 4. Check distance from the tile’s center to the player’s position
