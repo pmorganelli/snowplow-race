@@ -10,6 +10,7 @@ public class GameHandler : MonoBehaviour
 {
     public GameObject scoreText;
     public static int playerScore = 0;
+    public int scoreToWin = 200;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class GameHandler : MonoBehaviour
             scoreTextB.text = "FINAL SCORE: " + playerScore;
         }
 
-        if (playerScore >= 200)
+        if (playerScore >= scoreToWin)
         {
             //scoreTextB.text = "FINAL SCORE:" + playerScore;
             playerScore = 0;
