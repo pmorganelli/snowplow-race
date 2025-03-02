@@ -9,6 +9,11 @@ TagManager:
   - dark
   - Road
   - GameHandler
+  - PopupW
+  - PopupA
+  - PopupD
+  - PopupF
+  - PopupClear
   layers:
   - Default
   - TransparentFX
