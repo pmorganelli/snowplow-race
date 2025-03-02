@@ -6,33 +6,37 @@ public class IntroDialogueManager : MonoBehaviour
 {
     public GameObject introBox; // The UI panel containing dialogue
     public Text introText; // The legacy UI Text component
+    public Text enterIndicator; // The "Press Enter >" text
 
-    [TextArea(2, 5)] // Makes text input easier in the Inspector
-    public string[] dialogueLines; // Array of dialogue text
+    [TextArea(2, 5)]
+    public string[] dialogueLines;
     private int currentLine = 0;
     private bool isTyping = false;
     private bool textFullyDisplayed = false;
 
     public float textSpeed = 0.05f; // Speed of the typewriter effect
+    public float fadeDuration = 0.5f; // Duration of fade-in effect
 
     void Start()
     {
         introBox.SetActive(true); // Show dialogue box at start
-        StartCoroutine(TypeText(dialogueLines[currentLine])); // Start first dialogue line
+        enterIndicator.gameObject.SetActive(false); // Hide indicator initially
+        StartCoroutine(TypeText(dialogueLines[currentLine])); // Start first dialogue
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (isTyping) // If text is still appearing, instantly show full text
+            if (isTyping)
             {
                 StopAllCoroutines();
                 introText.text = dialogueLines[currentLine]; // Instantly display full line
                 isTyping = false;
                 textFullyDisplayed = true;
+                StartCoroutine(FadeInEnterIndicator()); // Show enter text with fade-in
             }
-            else if (textFullyDisplayed) // Move to next dialogue if full text is already shown
+            else if (textFullyDisplayed)
             {
                 NextDialogue();
             }
@@ -44,6 +48,7 @@ public class IntroDialogueManager : MonoBehaviour
         currentLine++;
         if (currentLine < dialogueLines.Length)
         {
+            enterIndicator.gameObject.SetActive(false); // Hide indicator while new text loads
             StartCoroutine(TypeText(dialogueLines[currentLine]));
         }
         else
@@ -57,6 +62,7 @@ public class IntroDialogueManager : MonoBehaviour
         isTyping = true;
         textFullyDisplayed = false;
         introText.text = ""; // Clear text
+        enterIndicator.gameObject.SetActive(false); // Hide indicator while typing
 
         foreach (char letter in text)
         {
@@ -66,12 +72,28 @@ public class IntroDialogueManager : MonoBehaviour
 
         isTyping = false;
         textFullyDisplayed = true;
+        StartCoroutine(FadeInEnterIndicator()); // Show enter text with fade-in
+    }
+
+    IEnumerator FadeInEnterIndicator()
+    {
+        enterIndicator.gameObject.SetActive(true);
+        enterIndicator.color = new Color(enterIndicator.color.r, enterIndicator.color.g, enterIndicator.color.b, 0f); // Set alpha to 0
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+            enterIndicator.color = new Color(enterIndicator.color.r, enterIndicator.color.g, enterIndicator.color.b, alpha);
+            yield return null;
+        }
+
+        enterIndicator.color = new Color(enterIndicator.color.r, enterIndicator.color.g, enterIndicator.color.b, 1f); // Fully visible
     }
 
     void EndDialogue()
     {
-        introBox.SetActive(false); // Hide the intro dialogue box
-        // Transition to main game scene (optional)
-        // SceneManager.LoadScene("MainGameScene");
+        introBox.SetActive(false); // Hide the dialogue box
     }
 }

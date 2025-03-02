@@ -1,6 +1,6 @@
-using UnityEngine;
-using UnityEngine.UI; // If using an Image UI element for darkness
 using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class HighBeamEffect : MonoBehaviour
 {
@@ -12,19 +12,32 @@ public class HighBeamEffect : MonoBehaviour
     private SpriteRenderer darknessSprite;
     private bool isFading = false;
 
+    public GameObject[] highBeamIndicators; // UI objects for high beam count
+    public GameObject warningTextBox; // UI text box for "Dang, high beams are really busted now..."
+    public float warningFadeTime = 1.5f; // Time for warning text fade-out
+
     void Start()
     {
         darknessSprite = GetComponent<SpriteRenderer>();
         remainingHighBeams = maxHighBeams; // Set available uses
+        warningTextBox.SetActive(false); // Hide warning text at start
     }
 
     void Update()
     {
         // Press 'F' to trigger high beams if available
-        if (Input.GetKeyDown(KeyCode.F) && remainingHighBeams > 0 && !isFading)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            remainingHighBeams--; // Reduce count
-            StartCoroutine(HighBeamFlash());
+            if (remainingHighBeams > 0 && !isFading)
+            {
+                remainingHighBeams--; // Reduce count
+                UpdateHighBeamIndicators(); // Remove UI indicator
+                StartCoroutine(HighBeamFlash());
+            }
+            else if (remainingHighBeams <= 0)
+            {
+                StartCoroutine(ShowWarningMessage());
+            }
         }
     }
 
@@ -58,5 +71,35 @@ public class HighBeamEffect : MonoBehaviour
         }
 
         darknessSprite.color = new Color(0, 0, 0, targetAlpha); // Final alpha
+    }
+
+    void UpdateHighBeamIndicators()
+    {
+        // Hide one high beam indicator per use
+        if (remainingHighBeams < highBeamIndicators.Length)
+        {
+            highBeamIndicators[remainingHighBeams].SetActive(false);
+        }
+    }
+
+    IEnumerator ShowWarningMessage()
+    {
+        warningTextBox.SetActive(true);
+        Text warningText = warningTextBox.GetComponent<Text>();
+        warningText.color = new Color(warningText.color.r, warningText.color.g, warningText.color.b, 1f); // Set full visibility
+
+        yield return new WaitForSeconds(warningFadeTime); // Keep text visible
+
+        // Fade out the warning text smoothly
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            warningText.color = new Color(warningText.color.r, warningText.color.g, warningText.color.b, alpha);
+            yield return null;
+        }
+
+        warningTextBox.SetActive(false);
     }
 }
