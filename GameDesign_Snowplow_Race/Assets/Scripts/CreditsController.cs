@@ -8,7 +8,7 @@ public class CreditsController : MonoBehaviour
     // Start is called before the first frame update
     public void ExitCredits()
     {
-        SceneManager.LoadScene("SelinScene");
+        SceneManager.LoadScene("SelinMainMenu");
     }
 
     // Update is called once per frame

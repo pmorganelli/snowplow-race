@@ -27,6 +27,6 @@ public class MenuManager : MonoBehaviour
     }
 
     public void OpenCredits() {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("CreditsSceneST");
     }
 }
