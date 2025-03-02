@@ -39,22 +39,32 @@ The tutorial popups are demonstrated in the scene `NRPopupDemo`. They rely on tw
 
   - `ColliderPopup` is associated with a postable object, to which it sends `Post` when the collider is entered and `Unpost` when the collider is exited.  The postable object is located by its tag, so once you set a tag in a prefab, it just works without having to do Inspector nonsense.
   
-They use these prefabs:
+A single tutorial popup uses two prefabs:
 
   - `Popup` is a UI element that has a background and some text.  It is based on the score object from the Week 1 tutorial.
 
   - `TutorialPopup` is a collider that will make an associated popup visible when the collider is entered.
 
+To add the existing tutorial popups to a new scene.
+
+  - Drag the `TutorialPopups` prefab onto a Canvas object.  This prefab has tutorials for WADF keys, plus one that says to clear all the snow.  Each popup has an identifying tag.
+
+  - Drag the `TutorialColliders` prefab into the scene.  Each existing collider has the name of the tag already in it, so there is no work to be done in the Inspector.
+
+  - If the new scene's map is different from the VK map, then the colliders will be in the wrong places.  (But in that case, do we even need the tutorials?)  All of the colliders will have to be moved to new locations.  And then the `TutorialColliders` object will need to be dragged back into `Assets/Prefab`, and the new prefab given a name that associates it with the new map.
+  
 
 To create a tutorial popup:
 
-  - Drag the `TutorialPopup` collider into the scene.  Adjust the collider size, position, and angle to where you want it to appear.  The popup will post when there is a vehicle inside the collider.  Rename the object to give a hint as to what it is supposed to pop up.
-  
-  - Drag a `Popup` prefab into the UI Canvas, making it a child of the canvas.  Adjust its position to where you want it to pop up on the screen.  Rename the object to give a hint as to what text it pops up.
-  
+  - Drag a `Popup` prefab into the UI Canvas, making it a child of `TutorialPopups`.  Adjust its position to where you want it to pop up on the screen.  Rename the object to give a hint as to what text it pops up.  Now use the Inspector to give the object a new, unique **tag** that will distinguish the new popup from all other popups and objects.
+
   - If the popup is supposed to be visible at startup, check the box in its `Postable` component.
 
   - Now go to the `Text` child of the `Popup` object and set the text.
+  
+  - The last step is to create a collider that activates the popup on entry.  Drag the `TutorialPopup` collider prefab into the scene, making it a child of `TutorialColliders`.  Adjust the collider size, position, and angle to where you want it to appear.  Use the Inspector to store the tag name of the popup you just created in the Canvas.  The popup will post when there is a vehicle inside the collider.  Rename the object to give a hint as to what it is supposed to pop up.
+
+
 
 
 # Scene sketches
