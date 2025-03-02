@@ -35,9 +35,9 @@ The current (Wed Feb 26 07:45:43 PM EST 2025) working prefab for the snowplow is
 
 The tutorial popups are demonstrated in the scene `NRPopupDemo`. They rely on two scripts:
 
-  - `Postable` adds a component to an object that can be made to appear and disappear at runtime.  To make it appear, send it a `Post()` message (via method).  To make it disappear, sent `Unpost()`.
+  - `Postable` adds a component to an object that can be made to appear and disappear at runtime.  To make it appear, send it a `Post()` message (via method).  To make it disappear, sent `Unpost()`.  Any client that sends `Post` or `Unpost` must also send `Initialize()` at startup.
 
-  - `ColliderPopup` has a postable object, to which it sends `Post` when the collider is entered and `Unpost` when the collider is exited.
+  - `ColliderPopup` is associated with a postable object, to which it sends `Post` when the collider is entered and `Unpost` when the collider is exited.  The postable object is located by its tag, so once you set a tag in a prefab, it just works without having to do Inspector nonsense.
   
 They use these prefabs:
 
