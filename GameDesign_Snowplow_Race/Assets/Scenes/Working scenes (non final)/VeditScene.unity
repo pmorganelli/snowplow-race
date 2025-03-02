@@ -14438,42 +14438,14 @@ PrefabInstance:
       propertyPath: gameHandlerObj
       value: 
       objectReference: {fileID: 1759381055}
-    - target: {fileID: 3739307595398496177, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739307595398496177, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739307595398496177, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4280085874461629162, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_Name
       value: SnowplowFINAL
-      objectReference: {fileID: 0}
-    - target: {fileID: 7048382105130214617, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3c661ab5ca45c46e0839056fd80b30f0, type: 3}
-    - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: fadeDuration
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: warningTextBox
       value: 
       objectReference: {fileID: 2132794729}
-    - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: highBeamDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
-      propertyPath: highBeamIndicators.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: highBeamIndicators.Array.data[0]
       value: 
