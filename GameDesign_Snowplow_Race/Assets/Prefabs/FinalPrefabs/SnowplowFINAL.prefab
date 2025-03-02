@@ -375,7 +375,7 @@ MonoBehaviour:
   gameHandlerObj: {fileID: 0}
   snowTilemap: {fileID: 0}
   pickupCollider: {fileID: 0}
-  snowAnimPrefab: {fileID: 0}
+  snowAnimPrefab: {fileID: 4154712982001412892, guid: 06b3771483bf34f7190797e2c1cb0274, type: 3}
 --- !u!58 &434851184807783600
 CircleCollider2D:
   m_ObjectHideFlags: 0
