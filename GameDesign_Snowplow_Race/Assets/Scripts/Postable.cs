@@ -5,22 +5,22 @@ public class Postable : MonoBehaviour
     [Tooltip("Whether the GameObject should be visible at startup.")]
     public bool visibleAtStartup = false;
 
-    private void Start()
+    // a Postable object should be active at startup so a client
+    // can find it by its tag.  The client should then call the
+    // Initialize method, which inactivates the object if needed.
+
+    public void Initialize() // called by cl
     {
         gameObject.SetActive(visibleAtStartup);
     }
 
-    /// <summary>
-    /// Makes the GameObject visible (active) in the scene.
-    /// </summary>
+    /// Makes the GameObject visible in the scene.
     public void Post()
     {
         gameObject.SetActive(true);
     }
 
-    /// <summary>
-    /// Makes the GameObject disappear (inactive) from the scene.
-    /// </summary>
+    /// Makes the GameObject disappear from the scene.
     public void Unpost()
     {
         gameObject.SetActive(false);

@@ -7,6 +7,7 @@ public class ColliderPopup : MonoBehaviour
     public string popupTag;
     [Tooltip("Reference to a GameObject that must have a Postable component.")]
     private GameObject popup;
+    private Postable popupComponent;
 
     void Start()
     {
@@ -20,6 +21,11 @@ public class ColliderPopup : MonoBehaviour
         {
             Debug.LogError($"No GameObject found with tag '{popupTag}'");
         }
+        popupComponent = popup.GetComponent<Postable>();
+        if (popupComponent == null) {
+            Debug.LogError($"GameObject lacks a Postable component");
+        }
+        popupComponent.Initialize();
     }
 
     private void Reset()
@@ -35,28 +41,11 @@ public class ColliderPopup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Post the popup on trigger enter
-        Postable popupComponent = popup.GetComponent<Postable>();
-        if (popupComponent != null)
-        {
-            popupComponent.Post();
-        }
-        else
-        {
-            Debug.LogWarning("The assigned popup GameObject does not have a Postable component.");
-        }
+        popupComponent.Post();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Unpost the popup on trigger exit
-        Postable popupComponent = popup.GetComponent<Postable>();
-        if (popupComponent != null)
-        {
-            popupComponent.Unpost();
-        }
-        else
-        {
-            Debug.LogWarning("The assigned popup GameObject does not have a Postable component.");
-        }
+        popupComponent.Unpost();
     }
 }
