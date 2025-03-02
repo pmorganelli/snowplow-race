@@ -653,7 +653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1859133368683775630, guid: 5f161b31734094c508e7a19d3c0ccfac, type: 3}
       propertyPath: m_Name
-      value: HighbeamImage (2)
+      value: HighbeamImage3
       objectReference: {fileID: 0}
     - target: {fileID: 4114261306527139347, guid: 5f161b31734094c508e7a19d3c0ccfac, type: 3}
       propertyPath: m_Pivot.x
@@ -1195,7 +1195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1859133368683775630, guid: 5f161b31734094c508e7a19d3c0ccfac, type: 3}
       propertyPath: m_Name
-      value: HighbeamImage
+      value: HighbeamImage1
       objectReference: {fileID: 0}
     - target: {fileID: 4114261306527139347, guid: 5f161b31734094c508e7a19d3c0ccfac, type: 3}
       propertyPath: m_Pivot.x
@@ -16606,7 +16606,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1859133368683775630, guid: 5f161b31734094c508e7a19d3c0ccfac, type: 3}
       propertyPath: m_Name
-      value: HighbeamImage (1)
+      value: HighbeamImage2
       objectReference: {fileID: 0}
     - target: {fileID: 4114261306527139347, guid: 5f161b31734094c508e7a19d3c0ccfac, type: 3}
       propertyPath: m_Pivot.x
