@@ -9,11 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/SelinMainMenu.unity
     guid: 61d7ce049640c4c7da6a3fd7700edacc
   - enabled: 1
-    path: Assets/Scenes/NR3.unity
-    guid: 9d4c55eeb540fa8aba94075f41d9a5ba
-  - enabled: 0
-    path: Assets/Scenes/peterPlaytestSnowplow.unity
-    guid: 77af3078e468448fb8b7693518463f82
+    path: Assets/Scenes/Working scenes (non final)/VeditScene.unity
+    guid: ecec0d1d7e89c4af3ba1a79dad12b2b6
   - enabled: 1
     path: Assets/Scenes/Final Scenes/EndScene.unity
     guid: be873966fc0d74efea7d8c044dd14910
