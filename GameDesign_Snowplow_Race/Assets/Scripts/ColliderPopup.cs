@@ -3,8 +3,24 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class ColliderPopup : MonoBehaviour
 {
+    [Tooltip("Tag name of a GameObject that must have a Postable component.")]
+    public string popupTag;
     [Tooltip("Reference to a GameObject that must have a Postable component.")]
-    public GameObject popup;
+    private GameObject popup;
+
+    void Start()
+    {
+        if (string.IsNullOrEmpty(popupTag))
+        {
+            Debug.LogError("popupTag is not set! Assign a valid tag in the Inspector.");
+            return;
+        }
+        popup = GameObject.FindWithTag(popupTag);
+        if (popup == null)
+        {
+            Debug.LogError($"No GameObject found with tag '{popupTag}'");
+        }
+    }
 
     private void Reset()
     {

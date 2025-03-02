@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup D
       objectReference: {fileID: 0}
+    - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
+      propertyPath: m_TagString
+      value: PopupD
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -270,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
       propertyPath: m_Name
       value: Popup Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
+      propertyPath: m_TagString
+      value: PopupClear
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -396,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
       propertyPath: m_Name
       value: Popup A
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
+      propertyPath: m_TagString
+      value: PopupA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -524,6 +536,10 @@ PrefabInstance:
     - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
       propertyPath: m_Name
       value: Popup W
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410972849628950613, guid: 90c0ed98eeaf884feacc2e224075f56e, type: 3}
+      propertyPath: m_TagString
+      value: PopupW
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
