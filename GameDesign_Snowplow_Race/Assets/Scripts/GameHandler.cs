@@ -44,7 +44,7 @@ public class GameHandler : MonoBehaviour
     void RestartGame()
     {
         playerScore = 0;
-        SceneManager.LoadScene("peterPlaytestSnowplow");
+        SceneManager.LoadScene(1);
     }
     void QuitGame()
     {
