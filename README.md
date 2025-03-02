@@ -1,8 +1,7 @@
 # State of the prefabs
 
 We have several snowplow prefabs in various states of debugging.
-The one that is most up to date is the `SimpleOversizedYellowPlow`.
-I just updated it with the changes that are used in Monday's demo.
+The one that is most up to date is the `SnowplowFINAL`.
 
 
 # How the game objects work
