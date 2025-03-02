@@ -451,8 +451,8 @@ MonoBehaviour:
     Selin
     Tuncay'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 47e9b30d809e548d8ac13aeee2bce73a, type: 2}
+  m_sharedMaterial: {fileID: -4608756819879366266, guid: 47e9b30d809e548d8ac13aeee2bce73a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -460,10 +460,10 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294918336
   m_fontColor: {r: 0.7510817, g: 0.25, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
@@ -476,13 +476,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -541,6 +541,22 @@ PrefabInstance:
     - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_text
       value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 47e9b30d809e548d8ac13aeee2bce73a, type: 2}
+    - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_fontStyle
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4608756819879366266, guid: 47e9b30d809e548d8ac13aeee2bce73a, type: 2}
+    - target: {fileID: 4955731704482787934, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
