@@ -31,7 +31,7 @@ Transform:
   - {fileID: 5913010569685164879}
   - {fileID: 8581335533344237925}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4559724636254740158
 GameObject:
@@ -149,13 +149,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6165652244188759719}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c0f09142f8534626916672b72893121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  scoreToWin: 850
+  scoreToWin: 200
 --- !u!1 &7205678018179081513
 GameObject:
   m_ObjectHideFlags: 0
