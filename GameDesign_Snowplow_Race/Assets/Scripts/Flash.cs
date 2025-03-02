@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class HighBeamEffect : MonoBehaviour
 {
     public float highBeamDuration = 2f; // How long high beams last
+    public float flickerSpeed = 0.1f; // Time between flickers
+    //public int flickerCount = 1; // How many times it flickers
     public int maxHighBeams = 3; // Max high beam uses
 
     private int remainingHighBeams;
@@ -48,11 +50,31 @@ public class HighBeamEffect : MonoBehaviour
 
         yield return new WaitForSeconds(highBeamDuration);
 
-        // Re-enable darkness overlay
+        // Flicker effect before turning darkness back on
+        if (darknessOverlay != null)
+            yield return StartCoroutine(FlickerDarkness());
+
+        // Fully re-enable darkness
         if (darknessOverlay != null)
             darknessOverlay.SetActive(true);
 
         isFading = false;
+    }
+
+    IEnumerator FlickerDarkness()
+    {
+        darknessOverlay.SetActive(true);
+        yield return new WaitForSeconds(flickerSpeed);
+        darknessOverlay.SetActive(false);
+        yield return new WaitForSeconds(flickerSpeed);
+
+        // for (int i = 0; i < flickerCount; i++)
+        // {
+        //     darknessOverlay.SetActive(true);
+        //     yield return new WaitForSeconds(flickerSpeed);
+        //     darknessOverlay.SetActive(false);
+        //     yield return new WaitForSeconds(flickerSpeed);
+        // }
     }
 
     void UpdateHighBeamIndicators()
