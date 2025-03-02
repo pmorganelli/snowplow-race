@@ -68,10 +68,10 @@ public class RBSteering : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log($"Collision with {collision.gameObject.name}");
-    }
+//    void OnCollisionEnter2D(Collision2D collision)
+//    {
+//        // Debug.Log($"Collision with {collision.gameObject.name}");
+//    }
 
 
 }
