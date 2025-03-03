@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Working scenes (non final)/VeditScenePlusTutorialPopups.unity
     guid: a1055c9dd1e9c7ef68bb12836e658d2a
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/EndScene.unity
+    path: Assets/Scenes/Final Scenes/EndSceneByNR.unity
     guid: be873966fc0d74efea7d8c044dd14910
   m_configObjects: {}
