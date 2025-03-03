@@ -128,6 +128,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3370228029349893913, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
   m_PrefabInstance: {fileID: 5587944813536561796}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &46379326 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1645890023037579158, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+  m_PrefabInstance: {fileID: 1770386636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &408543962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8909382489592287963, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
@@ -14435,6 +14440,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 803502701129696173, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803502701129696173, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: snowTilemap
       value: 
       objectReference: {fileID: 1732907416}
@@ -14442,6 +14451,18 @@ PrefabInstance:
       propertyPath: gameHandlerObj
       value: 
       objectReference: {fileID: 1759381055}
+    - target: {fileID: 3318688203911325327, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+      propertyPath: snowTilemap
+      value: 
+      objectReference: {fileID: 1732907416}
+    - target: {fileID: 3318688203911325327, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+      propertyPath: gameHandlerObj
+      value: 
+      objectReference: {fileID: 1759381055}
+    - target: {fileID: 3318688203911325327, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+      propertyPath: pickupCollider
+      value: 
+      objectReference: {fileID: 46379326}
     - target: {fileID: 4280085874461629162, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_Name
       value: SnowplowFINAL
