@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highBeamDuration: 0.5
+  flickerSpeed: 0.1
   maxHighBeams: 3
   darknessOverlay: {fileID: 5039487516183953626}
   highBeamIndicators:
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyMapping: WASD
-  moveSpeed: 5
+  moveSpeed: 7
   rotationSpeed: 180
 --- !u!58 &1073254884228835660
 CircleCollider2D:
