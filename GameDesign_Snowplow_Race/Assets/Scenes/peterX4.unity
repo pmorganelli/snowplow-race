@@ -16305,6 +16305,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3074293186170569014, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
+      propertyPath: m_Text
+      value: Highbeams (F)
+      objectReference: {fileID: 0}
     - target: {fileID: 7078958899259565258, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
       propertyPath: m_Name
       value: HighBeamIndicator
