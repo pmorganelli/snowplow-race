@@ -20,25 +20,7 @@ public class GameHandler : MonoBehaviour
 
         ListAllTagsInScene("tags at startup");
 
-        if (clearPopup == null) { 
-            clearPopup = GameObject.FindGameObjectWithTag("PopupClear");
-        }
-//        if (clearPopup == null) {
-//            Debug.LogWarning("No GameObject found with tag PopupClear.");
-//            ListAllTagsInScene("after failing to find PopupClear");
-//        } else {
-//            Text textComponent = clearPopup.GetComponentInChildren<Text>();
-//
-//            if (textComponent != null)
-//            {
-//                // Update the text
-//                textComponent.text = "Clear all " + scoreToWin + " snow";
-//            }
-//            else
-//            {
-//                Debug.LogWarning("No Text component found in children of PopupClear.");
-//            }
-//        }
+        SetClearPopupsTextInScene("Clear all " + scoreToWin + " snow");
 
         UpdateScore();
     }
@@ -142,7 +124,13 @@ public class GameHandler : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(obj.tag)) // Ensure the object has a tag
         {
-            uniqueTags.Add(obj.tag);
+            string activity;
+            if (obj.activeInHierarchy) {
+                activity = "-A";
+            } else {
+                activity = "-I";
+            }
+            uniqueTags.Add(obj.tag + activity);
         }
 
         // Recursively check children
@@ -151,4 +139,34 @@ public class GameHandler : MonoBehaviour
             CollectTags(child.gameObject, uniqueTags);
         }
     }
+
+    private void SetClearPopupsTextInHierarchy(GameObject obj, string text) {
+        if (obj.tag == "PopupClear") {
+            Text textComponent = obj.GetComponentInChildren<Text>();
+            if (textComponent != null)
+            {
+                textComponent.text = text;
+                Debug.Log("text successfully updated to");
+            }
+            else
+            {
+                Debug.LogWarning("No Text component found in children of PopupClear.");
+            }
+        } else {
+            foreach (Transform child in obj.transform)
+            {
+                SetClearPopupsTextInHierarchy(child.gameObject, text);
+            }
+        }
+    }
+            
+    private void SetClearPopupsTextInScene(string text)
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        GameObject[] rootObjects = activeScene.GetRootGameObjects();
+        foreach (GameObject obj in rootObjects) {
+            SetClearPopupsTextInHierarchy(obj, text);
+        }
+    }
+
 }
