@@ -16,6 +16,7 @@ TagManager:
   - PopupClear
   - Player1
   - Player2
+  - TextFinalScore
   layers:
   - Default
   - TransparentFX

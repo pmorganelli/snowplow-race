@@ -11765,7 +11765,11 @@ PrefabInstance:
       objectReference: {fileID: 761703151}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: scoreToWin
-      value: 300
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
+      propertyPath: endSceneName
+      value: EndSceneByNR
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
