@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class IntroDialogueManager : MonoBehaviour
 {
@@ -95,5 +97,7 @@ public class IntroDialogueManager : MonoBehaviour
     void EndDialogue()
     {
         introBox.SetActive(false); // Hide the dialogue box
+        SceneManager.LoadScene("peterX4"); // scene 1 must be the first level
+
     }
 }

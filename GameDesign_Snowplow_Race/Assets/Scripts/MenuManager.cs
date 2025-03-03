@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     public void StartGame()
     {
-        SceneManager.LoadScene(1); // scene 1 must be the first level
+        SceneManager.LoadScene("IntroScene"); // scene 1 must be the first level
     }
 
     // Update is called once per frame
