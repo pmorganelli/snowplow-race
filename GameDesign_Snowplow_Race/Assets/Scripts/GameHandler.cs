@@ -11,10 +11,31 @@ public class GameHandler : MonoBehaviour
     public GameObject scoreText;
     public static int playerScore = 0;
     public int scoreToWin = 200;
+    public GameObject clearPopup;
 
     // Start is called before the first frame update
     void Start()
     {
+        clearPopup = GameObject.FindGameObjectWithTag("PopupClear");
+        if (clearPopup != null) {
+            Text textComponent = clearPopup.GetComponentInChildren<Text>();
+
+            if (textComponent != null)
+            {
+                // Update the text
+                textComponent.text = "Clear all " + scoreToWin + " snow";
+            }
+            else
+            {
+                Debug.LogWarning("No Text component found in children of PopupClear.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No GameObject found with tag PopupClear.");
+        }
+
+
         UpdateScore();
     }
     public void AddScore(int points)
