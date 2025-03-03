@@ -406,6 +406,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 398406016}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 6523053393389978920, guid: a74994317dbc34bf082e0dc6a5795dbe, type: 3}
+    - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: scoreToWin
       value: 50
       objectReference: {fileID: 0}

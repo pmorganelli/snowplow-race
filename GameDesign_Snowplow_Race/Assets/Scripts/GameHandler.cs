@@ -9,10 +9,14 @@ using UnityEngine.SceneManagement; //change #1: added namespace
 public class GameHandler : MonoBehaviour
 {
     public GameObject scoreText;
+    public GameObject timerText;
     public static int playerScore = 0;
     public int scoreToWin = 200;
     public string endSceneName = "EndScene";
     private GameObject clearPopup;
+
+    private float timer = 120;
+    private bool isGameOver = false;
 
     void Start()
     {
@@ -23,7 +27,23 @@ public class GameHandler : MonoBehaviour
            // much snow needs to be cleared
 
         UpdateUIWithScore();
+        UpdateUIWithTimer();
     }
+
+    void Update() {
+        if (!isGameOver) {
+            timer -= Time.deltaTime;
+            if (timer <= 0f) {
+                timer = 0f; //prevent from going negative
+                UpdateUIWithTimer();
+                isGameOver = true;
+                LoseGame();
+            } else {
+                UpdateUIWithTimer();
+            }
+        }
+    }
+
     public void AddScore(int points)
     {
         playerScore += points;
@@ -78,6 +98,13 @@ public class GameHandler : MonoBehaviour
         // not actually loaded until update is complete
     }
 
+    private void LoseGame() {
+        winningScore = playerScore;
+        playerScore = 0;
+        sceneWonName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("EndSceneByNR");
+    }
+
     void UpdateUIWithScore()
     {
         Text scoreTextB = scoreText.GetComponent<Text>();
@@ -85,6 +112,17 @@ public class GameHandler : MonoBehaviour
             WinGame();
         } else {
             scoreTextB.text = "SCORE: " + playerScore;
+        }
+    }
+
+    void UpdateUIWithTimer() {
+        if (timerText != null) {
+            Text timerTextComponent = timerText.GetComponent<Text>();
+            int minutes = Mathf.FloorToInt(timer / 60f);
+            int seconds = Mathf.FloorToInt(timer % 60f);
+            timerTextComponent.text = string.Format("TIME: {0:0}:{1:00}", minutes, seconds);
+        } else {
+            Debug.LogError("timerText GameObject is not assigned in the inspector.");
         }
     }
 
