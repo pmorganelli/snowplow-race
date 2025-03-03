@@ -16202,7 +16202,7 @@ PrefabInstance:
       objectReference: {fileID: 945112480}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: scoreToWin
-      value: 500
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: endSceneName
