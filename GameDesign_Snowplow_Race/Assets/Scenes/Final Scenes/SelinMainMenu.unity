@@ -195,6 +195,34 @@ PrefabInstance:
       propertyPath: m_fontColorGradient.topLeft.r
       value: 0.23549305
       objectReference: {fileID: 0}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 334679062}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226556423324687957, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6929306627578258959, guid: 48b3c00965b5e4733b1b31e784cb6d52, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
