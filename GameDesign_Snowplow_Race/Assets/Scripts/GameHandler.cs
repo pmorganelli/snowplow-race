@@ -41,13 +41,15 @@ public class GameHandler : MonoBehaviour
         }
         scoreTextB.text = "SCORE: " + playerScore;
     }
-    void RestartGame()
+    public void RestartGame()
     {
         playerScore = 0;
+        Debug.Log("restarting with scene 1");
         SceneManager.LoadScene(1);
     }
-    void QuitGame()
+    public void QuitGame()
     {
+        Debug.Log("quitting game");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
