@@ -14,21 +14,25 @@ public class GameHandler : MonoBehaviour
     public string endSceneName = "EndScene";
     private GameObject clearPopup;
 
-    // Start is called before the first frame update
     void Start()
     {
-
-        ListAllTagsInScene("tags at startup");
+        // ListAllTagsInScene("tags at startup"); // debugging
 
         SetClearPopupsTextInScene("Clear all " + scoreToWin + " snow");
+           // make text in the "clear the snow" popup show exactly how
+           // much snow needs to be cleared
 
-        UpdateScore();
+        UpdateUIWithScore();
     }
     public void AddScore(int points)
     {
         playerScore += points;
-        UpdateScore();
+        UpdateUIWithScore();
     }
+
+    // These next methods are there to make code run when the 
+    // scene named `endSceneName` is loaded.  That's what makes
+    // the end scene have the correct winning score.
 
     private void OnEnable()
     {
@@ -40,12 +44,13 @@ public class GameHandler : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private static string sceneWonName;
-    private static int winningScore;
+    private static string sceneWonName; // name of the level the player won
+    private static int winningScore;    // and the number of points they won with
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        // called *every* time a new scene is loaded
         if (scene.name == endSceneName) {
-            ListAllTagsInScene("Tags after end scene loaded");
+            // ListAllTagsInScene("Tags after end scene loaded"); // debug
             GameObject textFinalScore = GameObject.FindGameObjectWithTag("TextFinalScore");
             if (textFinalScore == null) {
                 Debug.LogError("No GameObject found with tag TextFinalScore.");
@@ -54,27 +59,26 @@ public class GameHandler : MonoBehaviour
                 if (finalTextB == null) {
                     Debug.LogError("Object tagged TextFinalScore doesn't have a Text component");
                 } else {
-                    finalTextB.text = "FINAL SCORE: " + winningScore + "! You *beat* " + sceneWonName;
+                    finalTextB.text =
+                        "FINAL SCORE: " + winningScore + "! You beat " + sceneWonName;
                 }
             }
         }
     }
 
+    // to win the game, set the two variables above and then load the end scene
+
     private void WinGame() {
-        Debug.Log("Win!!! (with " + playerScore + " points");
+        // Debug.Log("Win!!! (with " + playerScore + " points)");
         winningScore = playerScore;
         playerScore = 0;
         sceneWonName = SceneManager.GetActiveScene().name;
-        ListAllTagsInScene("Tags before end scene");
+        // ListAllTagsInScene("Tags before end scene"); // debug
         SceneManager.LoadScene(endSceneName);
         // not actually loaded until update is complete
     }
 
-
-
-
-    // Update is called once per frame
-    void UpdateScore()
+    void UpdateUIWithScore()
     {
         Text scoreTextB = scoreText.GetComponent<Text>();
         if (playerScore >= scoreToWin) {
@@ -83,21 +87,70 @@ public class GameHandler : MonoBehaviour
             scoreTextB.text = "SCORE: " + playerScore;
         }
     }
+
+
+
+    // restart and quit buttons
+
     public void RestartGame()
     {
         playerScore = 0;
-        Debug.Log("restarting with scene 1");
+        // Debug.Log("restarting with scene 1");
         SceneManager.LoadScene(1);
     }
     public void QuitGame()
     {
-        Debug.Log("quitting game");
+        // Debug.Log("quitting game");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
     }
+
+
+    //// This code is a horrow show.  But it's the only way I have found
+    //// to update the content of a popup that (a) is not active
+    //// and (b) might not even be in the scene.
+
+
+    //// The primary method does all the descendants of a single object.
+    //// The next method below does all the root objects in the current scene.
+
+    private void SetClearPopupsTextInHierarchy(GameObject obj, string text) {
+        if (obj.tag == "PopupClear") {
+            Text textComponent = obj.GetComponentInChildren<Text>();
+            if (textComponent != null)
+            {
+                textComponent.text = text;
+                // Debug.Log("text successfully updated to");
+            }
+            else
+            {
+                Debug.LogError("No Text component found in children of PopupClear.");
+            }
+        } else {
+            foreach (Transform child in obj.transform)
+            {
+                SetClearPopupsTextInHierarchy(child.gameObject, text);
+            }
+        }
+    }
+            
+    private void SetClearPopupsTextInScene(string text)
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        GameObject[] rootObjects = activeScene.GetRootGameObjects();
+        foreach (GameObject obj in rootObjects) {
+            SetClearPopupsTextInHierarchy(obj, text);
+        }
+    }
+
+
+
+    //// DEBUGGING CODE
+    ////
+    //// List the tags of objects with their current activity.
 
     public void ListAllTagsInScene(string prefix)
     {
@@ -140,33 +193,5 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    private void SetClearPopupsTextInHierarchy(GameObject obj, string text) {
-        if (obj.tag == "PopupClear") {
-            Text textComponent = obj.GetComponentInChildren<Text>();
-            if (textComponent != null)
-            {
-                textComponent.text = text;
-                Debug.Log("text successfully updated to");
-            }
-            else
-            {
-                Debug.LogWarning("No Text component found in children of PopupClear.");
-            }
-        } else {
-            foreach (Transform child in obj.transform)
-            {
-                SetClearPopupsTextInHierarchy(child.gameObject, text);
-            }
-        }
-    }
-            
-    private void SetClearPopupsTextInScene(string text)
-    {
-        Scene activeScene = SceneManager.GetActiveScene();
-        GameObject[] rootObjects = activeScene.GetRootGameObjects();
-        foreach (GameObject obj in rootObjects) {
-            SetClearPopupsTextInHierarchy(obj, text);
-        }
-    }
 
 }
