@@ -9,6 +9,8 @@ public class SnowClearNearby : MonoBehaviour
     // public Animator animator;  // Reference to Animator component
     public GameObject snowAnimPrefab; // Assign this in the Inspector
 
+    public AudioClip snowCollisionSound;
+    private AudioSource audioSource;
     private void Start()
     { 
         if (GameObject.FindWithTag("GameHandler") != null) {
@@ -36,6 +38,14 @@ public class SnowClearNearby : MonoBehaviour
         if (pickupCollider == null) {
             Debug.LogError("No trigger collider found on this GameObject!");
         }
+
+        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null) {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        // audioSource.playOnAwake = false;
+        // audioSource.loop = false;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -81,6 +91,9 @@ public class SnowClearNearby : MonoBehaviour
             gameHandlerObj.AddScore(1);
             snowTilemap.SetTile(closestCellPos, null);
 
+            if(snowCollisionSound != null && audioSource != null) {
+                audioSource.PlayOneShot(snowCollisionSound);
+            }
             // Distance ahead of the plow where the effect should appear
             float forwardOffset = 1.5f; // Adjust this for best appearance
 

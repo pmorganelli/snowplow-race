@@ -14430,6 +14430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4533849441142158276, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 803502701129696173, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: snowTilemap
       value: 
