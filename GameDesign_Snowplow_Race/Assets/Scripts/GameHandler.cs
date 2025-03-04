@@ -14,6 +14,7 @@ public class GameHandler : MonoBehaviour
     public int scoreToWin = 200;
     public string endSceneName = "EndScene";
 
+    public Scene newScene;
     public string successSceneName = "SuccessScene";
     private GameObject clearPopup;
 
