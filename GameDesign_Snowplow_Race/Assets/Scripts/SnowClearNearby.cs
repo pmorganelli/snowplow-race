@@ -91,9 +91,16 @@ public class SnowClearNearby : MonoBehaviour
             gameHandlerObj.AddScore(1);
             snowTilemap.SetTile(closestCellPos, null);
 
-            if(snowCollisionSound != null && audioSource != null) {
-                audioSource.PlayOneShot(snowCollisionSound);
+            if (snowCollisionSound != null && audioSource != null)
+            {
+                if (!audioSource.isPlaying) // Prevent overlapping
+                {
+                    audioSource.PlayOneShot(snowCollisionSound);
+                }
             }
+            // if(snowCollisionSound != null && audioSource != null) {
+            //     audioSource.PlayOneShot(snowCollisionSound);
+            // }
             // Distance ahead of the plow where the effect should appear
             float forwardOffset = 1.5f; // Adjust this for best appearance
 
