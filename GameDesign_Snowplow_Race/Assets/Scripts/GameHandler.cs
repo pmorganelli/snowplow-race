@@ -145,7 +145,12 @@ public class GameHandler : MonoBehaviour
         Application.Quit();
 #endif
     }
-
+    // // FOR THE NEW FUNCTIONALITY FOR CONTINUING
+    // public void Continue()
+    // {
+    //     playerScore = 0;
+    //     SceneManager.LoadScene
+    // }
 
     //// This code is a horrow show.  But it's the only way I have found
     //// to update the content of a popup that (a) is not active
