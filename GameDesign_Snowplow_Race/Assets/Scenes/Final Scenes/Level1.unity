@@ -14668,7 +14668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039487516183953626, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: warningTextBox
@@ -14692,15 +14692,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9102450882759515673, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 9102450882759515673, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 9102450882759515673, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 9102450882759515673, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15052,7 +15052,7 @@ PrefabInstance:
       objectReference: {fileID: 945112480}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: scoreToWin
-      value: 1200
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: endSceneName
