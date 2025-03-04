@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -7.05
       objectReference: {fileID: 0}
+    - target: {fileID: 4340651929033958936, guid: c955a1b35fcd5e787a1534ae2d0dabd8, type: 3}
+      propertyPath: popupTag
+      value: PopupS
+      objectReference: {fileID: 0}
     - target: {fileID: 6168125224320036564, guid: c955a1b35fcd5e787a1534ae2d0dabd8, type: 3}
       propertyPath: m_Name
       value: TutorialColliders
@@ -447,6 +451,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1781706417}
     m_Modifications:
+    - target: {fileID: 1615720313757064576, guid: d1582a4fa3485bb20954f0b087fb1400, type: 3}
+      propertyPath: visibleAtStartup
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3682863147496257750, guid: d1582a4fa3485bb20954f0b087fb1400, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -494,6 +502,10 @@ PrefabInstance:
     - target: {fileID: 6545029925245239719, guid: d1582a4fa3485bb20954f0b087fb1400, type: 3}
       propertyPath: m_Name
       value: TutorialPopups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443794147517293038, guid: d1582a4fa3485bb20954f0b087fb1400, type: 3}
+      propertyPath: m_TagString
+      value: PopupS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
