@@ -108,7 +108,7 @@ public class GameHandler : MonoBehaviour
         winningScore = playerScore;
         playerScore = 0;
         sceneWonName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("EndSceneByNR");
+        SceneManager.LoadScene(endSceneName);
     }
 
     void UpdateUIWithScore()
