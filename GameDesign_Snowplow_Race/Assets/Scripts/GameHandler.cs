@@ -13,10 +13,14 @@ public class GameHandler : MonoBehaviour
     public static int playerScore = 0;
     public int scoreToWin = 200;
     public string endSceneName = "EndScene";
+
+    public string successSceneName = "SuccessScene";
     private GameObject clearPopup;
 
     private float timer = 120;
     private bool isGameOver = false;
+
+    public int currSceneNum = 2;
 
     void Start()
     {
@@ -94,7 +98,7 @@ public class GameHandler : MonoBehaviour
         playerScore = 0;
         sceneWonName = SceneManager.GetActiveScene().name;
         // ListAllTagsInScene("Tags before end scene"); // debug
-        SceneManager.LoadScene(endSceneName);
+        SceneManager.LoadScene(successSceneName);
         // not actually loaded until update is complete
     }
 
@@ -136,6 +140,22 @@ public class GameHandler : MonoBehaviour
         // Debug.Log("restarting with scene 1");
         SceneManager.LoadScene(1);
     }
+
+    public void NextLevel()
+    {
+        playerScore = 0;
+        // Debug.Log("restarting with scene 1");
+        if (currSceneNum < 6) {
+            // Debug.Log("curr scene num is " + currSceneNum);
+            currSceneNum++;
+            string nextSceneName = "Level" + currSceneNum.ToString();
+            Debug.Log("level name is: " + nextSceneName);
+            SceneManager.LoadScene(nextSceneName);
+        } else {
+            SceneManager.LoadScene(endSceneName);
+        }  
+    }
+
     public void QuitGame()
     {
         // Debug.Log("quitting game");

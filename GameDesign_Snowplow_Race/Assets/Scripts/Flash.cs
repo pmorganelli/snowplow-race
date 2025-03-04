@@ -7,19 +7,20 @@ public class HighBeamEffect : MonoBehaviour
     public float highBeamDuration = 2f; // How long high beams last
     public float flickerSpeed = 0.1f; // Time between flickers
     //public int flickerCount = 1; // How many times it flickers
-    public int maxHighBeams = 3; // Max high beam uses
+    public int maxHighBeams = 4; // Max high beam uses
 
     private int remainingHighBeams;
     private bool isFading = false;
 
     public GameObject darknessOverlay; // Reference to the Darkness Object
-    public GameObject[] highBeamIndicators; // UI indicators for high beam count
+    public GameObject [] highBeamIndicators; // UI indicators for high beam count
     public GameObject warningTextBox; // UI text for "Dang, high beams are busted..."
     public float warningFadeTime = 1.5f; // Time for warning text fade-out
 
     void Start()
     {
         remainingHighBeams = maxHighBeams;
+        Debug.Log("remaining: " + remainingHighBeams);
         warningTextBox.SetActive(false);
     }
 
@@ -79,9 +80,12 @@ public class HighBeamEffect : MonoBehaviour
 
     void UpdateHighBeamIndicators()
     {
-        if (remainingHighBeams < highBeamIndicators.Length)
+        // Debug.Log("remaining " + remainingHighBeams);
+        // Debug.Log("len " + highBeamIndicators.Length);
+        for (int i = 0; i < highBeamIndicators.Length; i++)
         {
-            highBeamIndicators[remainingHighBeams].SetActive(false);
+            // Activate the indicator if its index is less than the number of remaining high beams.
+            highBeamIndicators[i].SetActive(i < remainingHighBeams);
         }
     }
 

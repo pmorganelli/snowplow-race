@@ -7295,6 +7295,10 @@ PrefabInstance:
       value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
+      propertyPath: currSceneNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491778925039559169, guid: 049cc220855c1358c9c7a12722c088be, type: 3}
       propertyPath: endSceneName
       value: EndSceneByNR
       objectReference: {fileID: 0}
@@ -7398,6 +7402,10 @@ PrefabInstance:
     - target: {fileID: 3074293186170569014, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
       propertyPath: m_Text
       value: Highbeams (F)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085323446636529283, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7078958899259565258, guid: 011cfe7dc84db4de98963e79d5be5f83, type: 3}
       propertyPath: m_Name

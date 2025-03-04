@@ -97,7 +97,7 @@ public class IntroDialogueManager : MonoBehaviour
     void EndDialogue()
     {
         introBox.SetActive(false); // Hide the dialogue box
-        SceneManager.LoadScene("peterX4"); // scene 1 must be the first level
+        SceneManager.LoadScene("Level1"); // scene 1 must be the first level
 
     }
 }
