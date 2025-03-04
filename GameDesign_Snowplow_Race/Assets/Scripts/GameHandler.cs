@@ -69,7 +69,7 @@ public class GameHandler : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // When the end scene is loaded, update its final score text.
-        if (scene.name == endSceneName)
+        if (scene.name == endSceneName || scene.name == successSceneName)
         {
             GameObject textFinalScore = GameObject.FindGameObjectWithTag("TextFinalScore");
             if (textFinalScore == null)
