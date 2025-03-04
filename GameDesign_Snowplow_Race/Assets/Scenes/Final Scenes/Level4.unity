@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialColliders
       objectReference: {fileID: 0}
+    - target: {fileID: 6168125224320036564, guid: c955a1b35fcd5e787a1534ae2d0dabd8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -550,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 6545029925245239719, guid: d1582a4fa3485bb20954f0b087fb1400, type: 3}
       propertyPath: m_Name
       value: TutorialPopups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545029925245239719, guid: d1582a4fa3485bb20954f0b087fb1400, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14573,6 +14581,10 @@ PrefabInstance:
     - target: {fileID: 4280085874461629162, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_Name
       value: SnowplowFINAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039487516183953626, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: warningTextBox
