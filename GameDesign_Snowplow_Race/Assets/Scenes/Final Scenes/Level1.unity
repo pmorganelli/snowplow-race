@@ -6896,7 +6896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039487516183953626, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8994246364943022553, guid: 938e78f6e0ac74d91940b74fee83e275, type: 3}
       propertyPath: warningTextBox
