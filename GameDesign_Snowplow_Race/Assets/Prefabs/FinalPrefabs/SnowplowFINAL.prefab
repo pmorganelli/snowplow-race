@@ -378,7 +378,7 @@ MonoBehaviour:
   snowTilemap: {fileID: 0}
   pickupCollider: {fileID: 0}
   snowAnimPrefab: {fileID: 4154712982001412892, guid: 06b3771483bf34f7190797e2c1cb0274, type: 3}
-  snowCollisionSound: {fileID: 8300000, guid: 2ce617bfbf61f4fc9b513f5b632cb561, type: 3}
+  snowCollisionSound: {fileID: 8300000, guid: 4bae464fcadff4eb1a3fbd045dfae05e, type: 3}
 --- !u!58 &434851184807783600
 CircleCollider2D:
   m_ObjectHideFlags: 0

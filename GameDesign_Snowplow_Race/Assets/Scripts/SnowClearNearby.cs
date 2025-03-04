@@ -11,6 +11,7 @@ public class SnowClearNearby : MonoBehaviour
 
     public AudioClip snowCollisionSound;
     private AudioSource audioSource;
+    private bool isMoving = false; 
     private void Start()
     { 
         if (GameObject.FindWithTag("GameHandler") != null) {
@@ -46,6 +47,34 @@ public class SnowClearNearby : MonoBehaviour
 
         // audioSource.playOnAwake = false;
         // audioSource.loop = false;
+
+        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null) {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.loop = true; // Looping to keep continuous sound while moving
+        audioSource.playOnAwake = false;
+    }
+
+    private void Update()
+    {
+        // Check if any movement key is pressed
+        bool wasMoving = isMoving;
+        isMoving = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+
+        // Start or stop the sound based on movement
+        if (isMoving && !wasMoving)
+        {
+            if (snowCollisionSound != null && !audioSource.isPlaying)
+            {
+                audioSource.clip = snowCollisionSound;
+                audioSource.Play();
+            }
+        }
+        else if (!isMoving && wasMoving)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -91,13 +120,13 @@ public class SnowClearNearby : MonoBehaviour
             gameHandlerObj.AddScore(1);
             snowTilemap.SetTile(closestCellPos, null);
 
-            if (snowCollisionSound != null && audioSource != null)
-            {
-                if (!audioSource.isPlaying) // Prevent overlapping
-                {
-                    audioSource.PlayOneShot(snowCollisionSound);
-                }
-            }
+            // if (snowCollisionSound != null && audioSource != null)
+            // {
+            //     if (!audioSource.isPlaying) // Prevent overlapping
+            //     {
+            //         audioSource.PlayOneShot(snowCollisionSound);
+            //     }
+            // }
             // if(snowCollisionSound != null && audioSource != null) {
             //     audioSource.PlayOneShot(snowCollisionSound);
             // }
