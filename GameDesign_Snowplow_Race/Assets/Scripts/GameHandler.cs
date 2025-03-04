@@ -129,9 +129,13 @@ public class GameHandler : MonoBehaviour
         if (timerText != null)
         {
             Text timerTextComponent = timerText.GetComponent<Text>();
-            int minutes = Mathf.FloorToInt(timer / 60f);
-            int seconds = Mathf.FloorToInt(timer % 60f);
-            timerTextComponent.text = string.Format("TIME: {0:0}:{1:00}", minutes, seconds);
+            if (timerTextComponent == null) {
+                Debug.LogError("time text doesn't have a Text component");
+            } else { 
+                int minutes = Mathf.FloorToInt(timer / 60f);
+                int seconds = Mathf.FloorToInt(timer % 60f);
+                timerTextComponent.text = string.Format("TIME: {0:0}:{1:00}", minutes, seconds);
+            }
         }
         else
         {
