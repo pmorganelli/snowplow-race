@@ -12,7 +12,6 @@ public class GameHandler : MonoBehaviour
     public int scoreToWin = 200;
     public string endSceneName = "EndScene";
     public string successSceneName = "SuccessScene";
-    private string creditsSceneName = "CreditsSceneST";  // Credits scene name
 
     private float timer = 120;
     private bool isGameOver = false;
@@ -69,7 +68,7 @@ public class GameHandler : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // When the end scene is loaded, update its final score text.
-        if (scene.name == endSceneName || scene.name == successSceneName)
+        if (scene.name == endSceneName)
         {
             GameObject textFinalScore = GameObject.FindGameObjectWithTag("TextFinalScore");
             if (textFinalScore == null)
@@ -108,7 +107,7 @@ public class GameHandler : MonoBehaviour
         winningScore = playerScore;
         playerScore = 0;
         sceneWonName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(endSceneName);
+        SceneManager.LoadScene("EndSceneByNR");
     }
 
     void UpdateUIWithScore()
@@ -129,13 +128,9 @@ public class GameHandler : MonoBehaviour
         if (timerText != null)
         {
             Text timerTextComponent = timerText.GetComponent<Text>();
-            if (timerTextComponent == null) {
-                Debug.LogError("time text doesn't have a Text component");
-            } else { 
-                int minutes = Mathf.FloorToInt(timer / 60f);
-                int seconds = Mathf.FloorToInt(timer % 60f);
-                timerTextComponent.text = string.Format("TIME: {0:0}:{1:00}", minutes, seconds);
-            }
+            int minutes = Mathf.FloorToInt(timer / 60f);
+            int seconds = Mathf.FloorToInt(timer % 60f);
+            timerTextComponent.text = string.Format("TIME: {0:0}:{1:00}", minutes, seconds);
         }
         else
         {
@@ -155,7 +150,7 @@ public class GameHandler : MonoBehaviour
     {
         if (sceneWonName == "Level4")
         {
-            SceneManager.LoadScene(creditsSceneName);
+            SceneManager.LoadScene("CreditsSceneST");
             return;
         }
         
